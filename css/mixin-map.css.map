@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAMA,sCAAsC;AACtC,sCAAsC;AACtC,sCAAsC;AA0BtC,sCAAsC;AACtC,sCAAsC;AACtC,sCAAsC",
+    "sources": [
+        "mixin-map.scss"
+    ],
+    "names": [],
+    "file": "mixin-map.css"
+}

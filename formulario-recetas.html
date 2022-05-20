@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gocooking</title>
+    <link rel="shortcut icon" href="./img/goku.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <script type="text/JavaScript" src="./js/main.js"></script>
+    <script src="https://kit.fontawesome.com/c01ba83a13.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/goku.png" alt="">
+    </header>
+    <nav class="contenedor__menu-superior">
+       <div class="contenedor__elementos-menu">
+        <ul class="menu__superior-lista">
+            <li class="menu__superior-item"><a href="./index.html"><img src="./img/bola-dragon-4.png" alt="" class="bola4">Inicio<img src="./img/bola-dragon-4.png" alt="" class="bola4"></a></li>
+            <li class="menu__superior-item extension__menu-superior"><a href="./recetas.html"><img src="./img/bola-dragon-4.png" alt="" class="bola4">Recetas<img src="./img/bola-dragon-4.png" alt="" class="bola4"></a>
+                <ul>
+                    <li class="menu__superior-item"><a href="./recetas/arroz.html">Arroz</a></li>
+                    <li class="menu__superior-item"><a href="./recetas/carne.html">Carne</a></li>
+                    <li class="menu__superior-item"><a href="./recetas/pasta.html">Pasta</a></li>
+                    <li class="menu__superior-item"><a href="./recetas/pescado.html">Pescado</a></li>
+                    <li class="menu__superior-item"><a href="./recetas/sopa.html">Sopa</a></li>
+                </ul>
+            </li>
+            <li class="menu__superior-item"><a href="./sobre-mi.html"><img src="./img/bola-dragon-4.png" alt="" class="bola4">Sobre mi<img src="./img/bola-dragon-4.png" alt="" class="bola4"></a></li>
+            <li class="menu__superior-item"><a href="./formulario-recetas.html" style="color: orange"><img src="./img/bola-dragon-4.png" alt="" class="bola4">Añadir receta<img src="./img/bola-dragon-4.png" alt="" class="bola4"></a></li>
+            <li class="menu__superior-item"><a href="./contacto.html"><img src="./img/bola-dragon-4.png" alt="" class="bola4">Contacto<img src="./img/bola-dragon-4.png" alt="" class="bola4"></a></li>
+        </ul>
+        <div class="contenedor__buscar">
+            <input type="search" name="search" id="search-nav" placeholder="Buscar receta..."><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </div>
+       </div>
+    </nav>
+    
+    <main class="main">
+        <div class="contenedor__principal">
+           <div class="contenedor__formulario-recetas">
+               <form action="submit" name="formulario-recetas" id="formulario-recetas">
+               <!--     GRUPO TIPO DE RECETA    -->
+                <div class="grupo__formulario-receta tipo-receta">
+                    <label for="tipo-receta" class="titulo__grupo-formulario">Tipo de receta</label>
+                    <div class="contenedor__input-formulario" id="grupo_tipo">
+                        <select name="tipo-receta" id="id_tipo_receta" class="input__formulario-receta" onchange="optionSelected('tipo','id_tipo_receta')">
+                            <option value="empty">Seleccione el tipo de receta</option>
+                            <option value="Arroz">Arroz</option>
+                            <option value="Carne">Carne</option>
+                            <option value="Pasta">Pasta</option>
+                            <option value="Pescado">Pescado</option>
+                            <option value="Sopa">Sopa</option>
+                        </select>
+                        <p class="texto__validacion-error">Se requiere seleccionar el tipo de receta.</p>
+                        <!-- <i class="fa-solid  fa-xl  icono-estado"></i> -->
+                    </div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                 <!--     GRUPO DIFICULTAD DE RECETA    -->
+                <div class="grupo__formulario-receta dificultad-receta">
+                    <label for="dificultad-receta" class="titulo__grupo-formulario">Dificultad de receta</label>
+                    <div class="contenedor__input-formulario" id="grupo_dificultad">
+                        <select name="dificultad-receta" id="id_dificultad_receta" class="input__formulario-receta" onchange="optionSelected('dificultad','id_dificultad_receta')">
+                            <option value="empty">Seleccione la dificultad de la receta</option>
+                            <option value="Facil" title="Krilín pudo con ella">Fácil</option>
+                            <option value="Medio" title="Llévate alguna semilla Senzu por si acaso">Medio</option>
+                            <option value="Dificil" title="Deberás usar la Genki-dama">Dificil</option>
+                        </select>
+                        <p class="texto__validacion-error">Se requiere seleccionar una dificultad.</p>
+                        <!-- <i class="fa-solid  fa-xl  icono-estado"></i> -->
+                    </div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                <!--     GRUPO TITULO DE RECETA     -->
+                <div class="grupo__formulario-receta titulo-receta">
+                    <label for="titulo" class="titulo__grupo-formulario">Titulo de receta</label>
+                    <div class="contenedor__input-formulario" id="grupo_titulo">
+                        <input type="text" name="titulo" class="input__formulario-receta" id="id_titulo_receta" placeholder="Ej: Sopa de pescado">
+                        <i class="fa-solid  fa-xl  icono-estado"></i>
+                        <p class="texto__estado-error">Solo puede contener letras, acentos, números y espacios.</p>
+                        <p class="texto__validacion-error">Se requiere introducir el titulo correctamente.</p>
+                    </div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                 <!--     GRUPO SUBTITULO DE RECETA     -->
+                <div class="grupo__formulario-receta subtitulo-receta">
+                    <label for="subtitulo" class="titulo__grupo-formulario">Subtitulo de receta</label>
+                    <div class="contenedor__input-formulario" id="grupo_subtitulo">
+                        <input type="text" name="subtitulo" class="input__formulario-receta" id="id_subtitulo_receta" placeholder="Ej: Con legumbres y verduras">
+                        <i class="fa-solid  fa-xl  icono-estado"></i>
+                        <p class="texto__estado-error">Solo puede contener letras, acentos, números y espacios.</p>
+                        <p class="texto__validacion-error">Se requiere introducir el subtitulo correctamente.</p>
+                    </div>
+                    
+                </div>
+                <!--     GRUPO INTRODUCIR INGREDIENTE DE RECETA    -->
+                <div class="grupo__formulario-receta ingredientes-receta">
+                    <label for="ingrediente" class="titulo__grupo-formulario">Introducir ingredientes</label>
+                    <div class="contenedor__input-formulario" id="grupo_ingrediente">
+                        <input type="text" name="ingrediente" class="input__formulario-receta" placeholder="Ej: 3 zanahorias" id="nuevo-ingrediente">
+                        <i class="fa-solid  fa-xl  icono-estado"></i>
+                        <p class="texto__estado-error">Solo puede contener letras, acentos, números, espacios y los caracteres (guión, guión bajo, parentesis, puntos y comas).</p>
+                        <i class="fa-solid fa-arrow-right" href="" id="btn-introducir-ingrediente" onclick="introducirIngrediente()"></i>
+                    </div>
+                    <div class="btn__introducir-ingrediente"></div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                <!--     GRUPO INTRODUCIR RECETA    -->
+                <div class="grupo__formulario-receta pasos-receta">
+                    <label for="introducir-receta" class="titulo__grupo-formulario">Pasos de la receta</label>
+                    <div class="contenedor__input-formulario" id="grupo_instrucciones">
+                        <textarea name="introducir-receta" class="input__formulario-receta" id="instrucciones-receta" onchange="validarInstrucciones('instrucciones','instrucciones-receta')"></textarea>
+                        <i class="fa-solid  fa-xl  icono-estado"></i>
+                        <p class="texto__validacion-error">Se requiere al menos 100 caracteres.</p>
+                    </div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                
+                <!--     GRUPO LISTADO INGREDIENTES DE RECETA    -->
+                <div class="grupo__formulario-receta lista-ingredientes">
+                    <label class="titulo__grupo-formulario">Lista de ingredientes</label>
+                    <div class="contenedor__input-formulario" id="grupo_lista-ingredientes">
+                        <div name="listado-ingredientes" class="input__formulario-receta" id="contenedor-listado-ingredientes">
+                            <ul class="lista__listado-ingredientes" id="listado-ingredientes">
+                            </ul>
+                        </div>
+                        <p class="texto__validacion-error">Se requiere al 3 ingredientes.</p>
+                        <!-- <i class="fa-solid  fa-xl  icono-estado"></i> -->
+                    </div>
+                    <!-- <p class="texto__estado-error">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cupiditate.</p> -->
+                </div>
+                <div class="contenedor__botones-form-recetas">                    
+                    <div class="btn_fight">
+                        <img class="btn__decoracion-top" src="./img/Ins_Eff.png" alt="">
+                        <button type="submit"><a href="#" class="btn_enlace">Enviar</a></button>
+                        <img class="btn__decoracion-bot" src="./img/Ins_Eff.png" alt="">
+                    </div>
+                </div>
+                <!-- <input type="file" id="files" name="file"> -->
+               </form>
+           </div>
+        </div>
+    </main> 
+    <script type="text/JavaScript" src="./js/formulario.js"></script>
+    <script>switchBtnFightAnimation();</script>
+</body>
+</html>
